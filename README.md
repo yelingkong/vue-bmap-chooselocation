@@ -11,7 +11,9 @@
 使用该插件前，需要index.html页面中引入百度地图js
 
 百度ak获取地址 http://lbsyun.baidu.com/index.php?title=jspopular/guide/getkey
-
+```$xslt
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yourAK"></script>
+```
 安装
 
 ```$xslt
@@ -20,9 +22,7 @@ npm install vue-bmap-chooselocation -S
 ```
 ![image](https://raw.githubusercontent.com/yelingkong/vue-bmap-chooselocation/master/xiaoguo.gif)
 
-```$xslt
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yourAK"></script>
-```
+
 ```$xslt
 <template>
   <div id="app">
