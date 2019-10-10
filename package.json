@@ -15,6 +15,7 @@
     "less-loader": "^5.0.0",
     "vue": "^2.5.11"
   },
+
   "browserslist": [
     "> 1%",
     "last 2 versions",
