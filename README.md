@@ -18,6 +18,7 @@
 npm install vue-bmap-chooselocation -S 
 
 ```
+![image](https://raw.githubusercontent.com/yelingkong/vue-bmap-chooselocation/master/xiaoguo.gif)
 
 ```$xslt
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=yourAK"></script>
