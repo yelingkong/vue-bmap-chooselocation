@@ -1,37 +1,40 @@
 <template>
-  <div class="ys-map" v-if="showstatus">
-    <div class="map-wrapper">
-      <div id="map"></div>
-      <img class="position" src="../assets/maps.svg" alt="position">
-      <img class="nowposition" @click="locate" src="../assets/dingwei.svg" alt="nowposition">
-    </div>
-
-    <div id="tips">
-      <AddressItem :title="'当前位置'" @click.native="selectAddress(currentAddress,-1)" :checked="checked==-1"
-                   :address="currentAddress"
-                   :extra="'(以图上标记位置为准)'"/>
-      <AddressItem v-for="(item,index) in potentialLocation" v-bind:key="index"
-                   :title="item.title"
-                   :address="item.address" :checked="index==checked" @click.native="selectAddress(item,index)"/>
-      <!--            <div v-if="potentialLocation.length===0">{{point.lng}},{{point.lat}}</div>-->
-    </div>
-    <div class="ys-search-address">
-      <img class="back" src="../assets/back.svg" alt="back" @click="onBackClick">
-      <div class="ys-search-wrapper">
-        <img class="searchico" src="../assets/search.svg" alt="search" @click="searchValue=''">
-        <input type="text" v-model="searchValue" title="" id="suggestId" placeholder="定位不准？试试手动输入">
-        <img class="clear" src="../assets/close.svg" alt="search" @click="searchValue=''">
+  <div>
+    <div class="ys-map" v-if="showstatus">
+      <div class="map-wrapper">
+        <div id="map"></div>
+        <i class="icon iconfont icon-weizhi position"></i>
+        <i class="icon iconfont icon-dingwei nowposition" @click="locate"></i>
       </div>
-      <a class="okBtn" href="javascript:;" @click="onOkClick">确定</a>
-    </div>
-    <div class="search-tips" id="result">
-      tips
+
+      <div id="tips">
+        <AddressItem :title="'当前位置'" @click.native="selectAddress(currentAddress,-1)" :checked="checked==-1"
+                     :address="currentAddress"
+                     :extra="'(以图上标记位置为准)'"/>
+        <AddressItem v-for="(item,index) in potentialLocation" v-bind:key="index"
+                     :title="item.title"
+                     :address="item.address" :checked="index==checked" @click.native="selectAddress(item,index)"/>
+        <!--            <div v-if="potentialLocation.length===0">{{point.lng}},{{point.lat}}</div>-->
+      </div>
+      <div class="ys-search-address">
+        <i class="icon iconfont icon-back back" @click="onBackClick"></i>
+        <div class="ys-search-wrapper">
+          <i class="icon iconfont icon-search searchico" @click="searchValue=''"></i>
+          <input type="text" v-model="searchValue" title="" id="suggestId" placeholder="定位不准？试试手动输入">
+          <i class="icon iconfont icon-close clear" @click="searchValue=''"></i>
+        </div>
+        <a class="okBtn" href="javascript:;" @click="onOkClick">确定</a>
+      </div>
+      <div class="search-tips" id="result">
+        tips
+      </div>
     </div>
   </div>
 </template>
 
 <script>
     import AddressItem from "../packages/AddressItem";
+
     export default {
         name: 'vue-bmap-chooselocation',
         components: {AddressItem},
@@ -181,6 +184,8 @@
 </script>
 
 <style lang="less" scoped>
+  @import url('https://at.alicdn.com/t/font_1450071_2k03ofa1d9w.css');
+
   * {
     margin: 0;
     padding: 0;
@@ -216,6 +221,8 @@
       .position {
         position: absolute;
         left: 50%;
+        font-size: 30px;
+        color: #0e96da;
         top: 50%;
         transform: translate(-50%, -75%); //The bottom of the icon is centered,75  = 50(center) + 25(top)
         z-index: 100;
@@ -228,6 +235,8 @@
         bottom: 20px;
         z-index: 100;
         width: 20px;
+        font-size: 30px;
+        color: #0e96da;
       }
 
     }
@@ -278,16 +287,19 @@
           font-size: 14px;
         }
 
-        img.searchico {
+        .searchico {
           width: 24px;
           fill: #bbbbbb;
           color: #bbbbbb;
           margin-left: 10px;
+          font-size: 20px;
+          color: #bbbbbb;
         }
 
-        img.clear {
-          width: 15px;
+        .clear {
           margin-right: 10px;
+          font-size: 20px;
+          color: #bbbbbb;
         }
 
         input {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div @click="showmap">选择地区</div>
-    <vueBmapChooselocation ref="vueBmapChooselocation" @change="changeaddress"></vueBmapChooselocation>
+    <vueBmapChooselocation ref="vuemap" @change="changeaddress"></vueBmapChooselocation>
   </div>
 </template>
 
@@ -24,7 +24,8 @@
             },
             showmap() {
                 // this.$refs.vuecity.show();
-                this.$refs.vueBmapChooselocation.show();
+
+                this.$refs.vuemap.show();
             }
         }
     }

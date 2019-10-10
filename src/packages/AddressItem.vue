@@ -5,7 +5,7 @@
       <p class="address">{{address}}</p>
     </div>
     <div v-if="checked" class="map_select">
-      <img style="width: 20px" src="../assets/checked.svg" alt="">
+      <i class="icon iconfont icon-xuanze xuanze"></i>
     </div>
   </div>
 </template>
@@ -48,10 +48,13 @@
     }
 </script>
 <style lang="less" scoped>
-  *{
+  @import url('https://at.alicdn.com/t/font_1450071_2k03ofa1d9w.css');
+
+  * {
     margin: 0;
     padding: 0;
   }
+
   .mpas_items {
     display: flex;
     justify-content: space-between;
@@ -77,5 +80,15 @@
     .address {
       font-size: 14px;
     }
+
+  }
+
+  .icon-xuanze {
+    font-size: 20px;
+    color: #0f96db;
+  }
+
+  .xuanze {
+    color: #0f96db;
   }
 </style>
