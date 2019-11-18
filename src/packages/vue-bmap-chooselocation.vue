@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ys-map" v-if="showstatus">
+    <div class="ys-map" v-show="showstatus">
       <div class="map-wrapper">
         <div id="map"></div>
         <i class="icon iconfont icon-weizhi position"></i>
