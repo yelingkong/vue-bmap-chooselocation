@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ys-map" v-show="showstatus">
+    <div class="ys-map">
       <div class="map-wrapper">
         <div id="map"></div>
         <i class="icon iconfont icon-weizhi position"></i>
@@ -20,7 +20,7 @@
         <i class="icon iconfont icon-back back" @click="onBackClick"></i>
         <div class="ys-search-wrapper">
           <i class="icon iconfont icon-search searchico" @click="searchValue=''"></i>
-          <input type="text" v-model="searchValue" title="" id="suggestId" placeholder="定位不准？试试手动输入">
+          <input type="text" v-model="searchValue" id="suggestId" placeholder="定位不准？试试手动输入">
           <i class="icon iconfont icon-close clear" @click="searchValue=''"></i>
         </div>
         <a class="okBtn" href="javascript:;" @click="onOkClick">确定</a>
@@ -39,6 +39,17 @@
         name: 'vue-bmap-chooselocation',
         components: {AddressItem},
         mounted() {
+        },
+        props: {
+            isshow: {
+                type: Boolean,
+                default: false
+            },
+        },
+        watch: {
+            isshow: function (val) {
+                this.show();
+            },
         },
         methods: {
             itemchecked(e) {
@@ -91,7 +102,7 @@
                         if (local.getStatus() === BMAP_STATUS_SUCCESS) {
                             let temp = [];
                             results.forEach(item => {
-                                temp = temp.concat(item.Ar);
+                                temp = temp.concat(item.Br);
                             });
                             vm.potentialLocation = temp;
                         } else {

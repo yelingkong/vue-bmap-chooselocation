@@ -1,7 +1,7 @@
 {
   "name": "vue-bmap-chooselocation",
   "description": "百度地图仿微信小程序chooselocation",
-  "version": "1.0.9",
+  "version": "1.1.2",
   "author": "yelingkong <zhaowanjun123@gmail.com>",
   "license": "MIT",
   "private": false,
